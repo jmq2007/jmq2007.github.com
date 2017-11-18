@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="查支持模式询电视：/opt/vc/bin/tvservice -m CEA显示器：/opt/vc/bin/tvservice -m DMT查询结果(电视)：  pi@raspberrypi:~ $ /opt/vc/bin/tvservice -m CEAGroup CEA has 15 modes:           mode 1: 640x480 @ 60Hz 4:3, clock:25MHz">
+<meta name="description" content="HDIM输出有黑边通过HDMI输出到电视，发现分辨率确实是1080P，但是四周都有很大的黑边，通过配置disable_overscan=1可以去除黑边。sudo vi /boot/config.txt找到  #disable_overscan=1  将前面的#注释符号去除，保存。保存后重启sudo reboot. 强制修改分辨率一般HDIM输出已经是自动匹配，默认无需修改，如果要强制修改按下面步骤">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树莓派[2]-分辨率设置">
+<meta property="og:title" content="树莓派[2]-显示设置">
 <meta property="og:url" content="https://hiant.me/2017/11/18/raspberry-pi-2-resolution-setting/index.html">
 <meta property="og:site_name" content="Hi Ant">
-<meta property="og:description" content="查支持模式询电视：/opt/vc/bin/tvservice -m CEA显示器：/opt/vc/bin/tvservice -m DMT查询结果(电视)：  pi@raspberrypi:~ $ /opt/vc/bin/tvservice -m CEAGroup CEA has 15 modes:           mode 1: 640x480 @ 60Hz 4:3, clock:25MHz">
-<meta property="og:updated_time" content="2017-11-18T06:25:59.202Z">
+<meta property="og:description" content="HDIM输出有黑边通过HDMI输出到电视，发现分辨率确实是1080P，但是四周都有很大的黑边，通过配置disable_overscan=1可以去除黑边。sudo vi /boot/config.txt找到  #disable_overscan=1  将前面的#注释符号去除，保存。保存后重启sudo reboot. 强制修改分辨率一般HDIM输出已经是自动匹配，默认无需修改，如果要强制修改按下面步骤">
+<meta property="og:updated_time" content="2017-11-18T06:46:26.211Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="树莓派[2]-分辨率设置">
-<meta name="twitter:description" content="查支持模式询电视：/opt/vc/bin/tvservice -m CEA显示器：/opt/vc/bin/tvservice -m DMT查询结果(电视)：  pi@raspberrypi:~ $ /opt/vc/bin/tvservice -m CEAGroup CEA has 15 modes:           mode 1: 640x480 @ 60Hz 4:3, clock:25MHz">
+<meta name="twitter:title" content="树莓派[2]-显示设置">
+<meta name="twitter:description" content="HDIM输出有黑边通过HDMI输出到电视，发现分辨率确实是1080P，但是四周都有很大的黑边，通过配置disable_overscan=1可以去除黑边。sudo vi /boot/config.txt找到  #disable_overscan=1  将前面的#注释符号去除，保存。保存后重启sudo reboot. 强制修改分辨率一般HDIM输出已经是自动匹配，默认无需修改，如果要强制修改按下面步骤">
 
 
 
@@ -124,7 +124,7 @@
 
 
 
-  <title>树莓派[2]-分辨率设置 | Hi Ant</title>
+  <title>树莓派[2]-显示设置 | Hi Ant</title>
   
 
 
@@ -248,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">树莓派[2]-分辨率设置</h1>
+          <h1 class="post-title" itemprop="name headline">树莓派[2]-显示设置</h1>
         
 
         <div class="post-meta">
@@ -298,12 +298,17 @@
       
 
       
-        <h1 id="查支持模式询"><a href="#查支持模式询" class="headerlink" title="查支持模式询"></a>查支持模式询</h1><p>电视：<br><code>/opt/vc/bin/tvservice -m CEA</code><br>显示器：<br><code>/opt/vc/bin/tvservice -m DMT</code><br>查询结果(电视)：</p>
+        <h1 id="HDIM输出有黑边"><a href="#HDIM输出有黑边" class="headerlink" title="HDIM输出有黑边"></a>HDIM输出有黑边</h1><p>通过HDMI输出到电视，发现分辨率确实是1080P，但是四周都有很大的黑边，通过配置<code>disable_overscan=1</code>可以去除黑边。<br><code>sudo vi /boot/config.txt</code><br>找到</p>
+<blockquote>
+<p>#disable_overscan=1</p>
+</blockquote>
+<p>将前面的#注释符号去除，保存。<br>保存后重启<br><code>sudo reboot</code><br>.</p>
+<h1 id="强制修改分辨率"><a href="#强制修改分辨率" class="headerlink" title="强制修改分辨率"></a>强制修改分辨率</h1><p>一般HDIM输出已经是自动匹配，默认无需修改，如果要强制修改按下面步骤即可。</p>
+<h2 id="查分辨率支持模式询"><a href="#查分辨率支持模式询" class="headerlink" title="查分辨率支持模式询"></a>查分辨率支持模式询</h2><p>电视：<br><code>/opt/vc/bin/tvservice -m CEA</code><br>显示器：<br><code>/opt/vc/bin/tvservice -m DMT</code><br>查询结果(电视)：</p>
 <blockquote>
 <p>pi@raspberrypi:~ $ /opt/vc/bin/tvservice -m CEA<br>Group CEA has 15 modes:<br>           mode 1: 640x480 @ 60Hz 4:3, clock:25MHz progressive<br>           mode 2: 720x480 @ 60Hz 4:3, clock:27MHz progressive<br>           mode 3: 720x480 @ 60Hz 16:9, clock:27MHz progressive<br>           mode 4: 1280x720 @ 60Hz 16:9, clock:74MHz progressive<br>           mode 5: 1920x1080 @ 60Hz 16:9, clock:74MHz interlaced<br>  (prefer) mode 16: 1920x1080 @ 60Hz 16:9, clock:148MHz progressive<br>           mode 17: 720x576 @ 50Hz 4:3, clock:27MHz progressive<br>           mode 18: 720x576 @ 50Hz 16:9, clock:27MHz progressive<br>           mode 19: 1280x720 @ 50Hz 16:9, clock:74MHz progressive<br>           mode 20: 1920x1080 @ 50Hz 16:9, clock:74MHz interlaced<br>           mode 21: 720x576 @ 50Hz 4:3, clock:27MHz x2 interlaced<br>           mode 31: 1920x1080 @ 50Hz 16:9, clock:148MHz progressive<br>           mode 32: 1920x1080 @ 24Hz 16:9, clock:74MHz progressive<br>           mode 33: 1920x1080 @ 25Hz 16:9, clock:74MHz progressive  </p>
 </blockquote>
-<p>一般选择prefer的，即<code>mode 16: 1920x1080 @ 60Hz</code>。</p>
-<h1 id="修改分辨率"><a href="#修改分辨率" class="headerlink" title="修改分辨率"></a>修改分辨率</h1><p><code>sudo vi /boot/config.txt</code><br>修改如下参数  </p>
+<h2 id="修改分辨率"><a href="#修改分辨率" class="headerlink" title="修改分辨率"></a>修改分辨率</h2><p><code>sudo vi /boot/config.txt</code><br>修改如下参数  </p>
 <blockquote>
 <p>hdmi_group=1  // 1=电视, 2=显示器<br>hdmi_mode=16  // 1920x1080@60Hz</p>
 </blockquote>
@@ -456,7 +461,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查支持模式询"><span class="nav-number">1.</span> <span class="nav-text">查支持模式询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改分辨率"><span class="nav-number">2.</span> <span class="nav-text">修改分辨率</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HDIM输出有黑边"><span class="nav-number">1.</span> <span class="nav-text">HDIM输出有黑边</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#强制修改分辨率"><span class="nav-number">2.</span> <span class="nav-text">强制修改分辨率</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查分辨率支持模式询"><span class="nav-number">2.1.</span> <span class="nav-text">查分辨率支持模式询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改分辨率"><span class="nav-number">2.2.</span> <span class="nav-text">修改分辨率</span></a></li></ol></li></ol></div>
             
 
           </div>
