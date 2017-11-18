@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -214,6 +214,135 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hiant.me/2017/11/18/raspberry-pi-2-resolution-setting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi Ant">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/18/raspberry-pi-2-resolution-setting/" itemprop="url">树莓派[2]-分辨率设置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-18T14:02:04+08:00">
+                2017-11-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="查支持模式询"><a href="#查支持模式询" class="headerlink" title="查支持模式询"></a>查支持模式询</h1><p>电视：<br><code>/opt/vc/bin/tvservice -m CEA</code><br>显示器：<br><code>/opt/vc/bin/tvservice -m DMT</code><br>查询结果(电视)：</p>
+<blockquote>
+<p>pi@raspberrypi:~ $ /opt/vc/bin/tvservice -m CEA<br>Group CEA has 15 modes:<br>           mode 1: 640x480 @ 60Hz 4:3, clock:25MHz progressive<br>           mode 2: 720x480 @ 60Hz 4:3, clock:27MHz progressive<br>           mode 3: 720x480 @ 60Hz 16:9, clock:27MHz progressive<br>           mode 4: 1280x720 @ 60Hz 16:9, clock:74MHz progressive<br>           mode 5: 1920x1080 @ 60Hz 16:9, clock:74MHz interlaced<br>  (prefer) mode 16: 1920x1080 @ 60Hz 16:9, clock:148MHz progressive<br>           mode 17: 720x576 @ 50Hz 4:3, clock:27MHz progressive<br>           mode 18: 720x576 @ 50Hz 16:9, clock:27MHz progressive<br>           mode 19: 1280x720 @ 50Hz 16:9, clock:74MHz progressive<br>           mode 20: 1920x1080 @ 50Hz 16:9, clock:74MHz interlaced<br>           mode 21: 720x576 @ 50Hz 4:3, clock:27MHz x2 interlaced<br>           mode 31: 1920x1080 @ 50Hz 16:9, clock:148MHz progressive<br>           mode 32: 1920x1080 @ 24Hz 16:9, clock:74MHz progressive<br>           mode 33: 1920x1080 @ 25Hz 16:9, clock:74MHz progressive  </p>
+</blockquote>
+<p>一般选择prefer的，即<code>mode 16: 1920x1080 @ 60Hz</code>。</p>
+<h1 id="修改分辨率"><a href="#修改分辨率" class="headerlink" title="修改分辨率"></a>修改分辨率</h1><p><code>sudo vi /boot/config.txt</code><br>修改如下参数  </p>
+<blockquote>
+<p>hdmi_group=1  // 1=电视, 2=显示器<br>hdmi_mode=16  // 1920x1080@60Hz</p>
+</blockquote>
+<p>保存后重启<br><code>sudo reboot</code> </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -257,7 +386,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-05T15:16:51+08:00">
                 2017-11-05
@@ -392,7 +521,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-05T14:27:14+08:00">
                 2017-11-05
@@ -524,8 +653,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -577,7 +706,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 

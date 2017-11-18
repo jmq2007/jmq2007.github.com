@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="原料：  SD Card Formatter：https://www.sdcard.org/downloads/formatter_4/eula_windows/ Win32DiskImager：https://sourceforge.net/projects/win32diskimager/ Raspbian系统镜像：https://www.raspberrypi.org/downloads/r">
+<meta name="description" content="查支持模式询电视：/opt/vc/bin/tvservice -m CEA显示器：/opt/vc/bin/tvservice -m DMT查询结果(电视)：  pi@raspberrypi:~ $ /opt/vc/bin/tvservice -m CEAGroup CEA has 15 modes:           mode 1: 640x480 @ 60Hz 4:3, clock:25MHz">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树莓派[1]-系统安装">
-<meta property="og:url" content="https://hiant.me/2017/11/05/raspberry-pi-1-install-the-system/index.html">
+<meta property="og:title" content="树莓派[2]-分辨率设置">
+<meta property="og:url" content="https://hiant.me/2017/11/18/raspberry-pi-2-resolution-setting/index.html">
 <meta property="og:site_name" content="Hi Ant">
-<meta property="og:description" content="原料：  SD Card Formatter：https://www.sdcard.org/downloads/formatter_4/eula_windows/ Win32DiskImager：https://sourceforge.net/projects/win32diskimager/ Raspbian系统镜像：https://www.raspberrypi.org/downloads/r">
-<meta property="og:updated_time" content="2017-11-05T08:06:53.127Z">
+<meta property="og:description" content="查支持模式询电视：/opt/vc/bin/tvservice -m CEA显示器：/opt/vc/bin/tvservice -m DMT查询结果(电视)：  pi@raspberrypi:~ $ /opt/vc/bin/tvservice -m CEAGroup CEA has 15 modes:           mode 1: 640x480 @ 60Hz 4:3, clock:25MHz">
+<meta property="og:updated_time" content="2017-11-18T06:25:59.202Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="树莓派[1]-系统安装">
-<meta name="twitter:description" content="原料：  SD Card Formatter：https://www.sdcard.org/downloads/formatter_4/eula_windows/ Win32DiskImager：https://sourceforge.net/projects/win32diskimager/ Raspbian系统镜像：https://www.raspberrypi.org/downloads/r">
+<meta name="twitter:title" content="树莓派[2]-分辨率设置">
+<meta name="twitter:description" content="查支持模式询电视：/opt/vc/bin/tvservice -m CEA显示器：/opt/vc/bin/tvservice -m DMT查询结果(电视)：  pi@raspberrypi:~ $ /opt/vc/bin/tvservice -m CEAGroup CEA has 15 modes:           mode 1: 640x480 @ 60Hz 4:3, clock:25MHz">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://hiant.me/2017/11/05/raspberry-pi-1-install-the-system/"/>
+  <link rel="canonical" href="https://hiant.me/2017/11/18/raspberry-pi-2-resolution-setting/"/>
 
 
 
 
 
-  <title>树莓派[1]-系统安装 | Hi Ant</title>
+  <title>树莓派[2]-分辨率设置 | Hi Ant</title>
   
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hiant.me/2017/11/05/raspberry-pi-1-install-the-system/">
+    <link itemprop="mainEntityOfPage" href="https://hiant.me/2017/11/18/raspberry-pi-2-resolution-setting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -248,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">树莓派[1]-系统安装</h1>
+          <h1 class="post-title" itemprop="name headline">树莓派[2]-分辨率设置</h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-05T15:16:51+08:00">
-                2017-11-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-18T14:02:04+08:00">
+                2017-11-18
               </time>
             
 
@@ -298,22 +298,16 @@
       
 
       
-        <p>原料：</p>
-<ol>
-<li>SD Card Formatter：<a href="https://www.sdcard.org/downloads/formatter_4/eula_windows/" target="_blank" rel="external">https://www.sdcard.org/downloads/formatter_4/eula_windows/</a></li>
-<li>Win32DiskImager：<br><a href="https://sourceforge.net/projects/win32diskimager/" target="_blank" rel="external">https://sourceforge.net/projects/win32diskimager/</a></li>
-<li>Raspbian系统镜像：<a href="https://www.raspberrypi.org/downloads/raspbian/（我下载的是RASPBIAN" target="_blank" rel="external">https://www.raspberrypi.org/downloads/raspbian/（我下载的是RASPBIAN</a> STRETCH WITH DESKTOP）</li>
-</ol>
-<p>步骤:</p>
-<ol>
-<li>使用SD Card Formatter 格式化SD卡</li>
-<li>使用Win32DiskImager将解压得到的2017-09-07-raspbian-stretch.img写入SD卡</li>
-<li>写入完成后，SD卡会被分区，会有一个boot驱动器，进到这个驱动器的根目录，建立一个空文本文件，重命名为ssh（此步骤是为了开启默认关闭的ssh）</li>
-<li>插上网线、电源，观察路由器的DHCP分配情况，，得到树莓派分配到的IP地址（一般是一个名为raspberrypi的客户端）</li>
-<li>使用上一步骤得到的IP使用putty之类的SSH工具连接到树莓派，默认用户名/密码:pi/raspberry</li>
-</ol>
-<p>完工！</p>
-<p>sudo vi /etc/apt/sources.list<br><a href="http://mirrors.aliyun.com/raspbian/raspbian/" target="_blank" rel="external">http://mirrors.aliyun.com/raspbian/raspbian/</a></p>
+        <h1 id="查支持模式询"><a href="#查支持模式询" class="headerlink" title="查支持模式询"></a>查支持模式询</h1><p>电视：<br><code>/opt/vc/bin/tvservice -m CEA</code><br>显示器：<br><code>/opt/vc/bin/tvservice -m DMT</code><br>查询结果(电视)：</p>
+<blockquote>
+<p>pi@raspberrypi:~ $ /opt/vc/bin/tvservice -m CEA<br>Group CEA has 15 modes:<br>           mode 1: 640x480 @ 60Hz 4:3, clock:25MHz progressive<br>           mode 2: 720x480 @ 60Hz 4:3, clock:27MHz progressive<br>           mode 3: 720x480 @ 60Hz 16:9, clock:27MHz progressive<br>           mode 4: 1280x720 @ 60Hz 16:9, clock:74MHz progressive<br>           mode 5: 1920x1080 @ 60Hz 16:9, clock:74MHz interlaced<br>  (prefer) mode 16: 1920x1080 @ 60Hz 16:9, clock:148MHz progressive<br>           mode 17: 720x576 @ 50Hz 4:3, clock:27MHz progressive<br>           mode 18: 720x576 @ 50Hz 16:9, clock:27MHz progressive<br>           mode 19: 1280x720 @ 50Hz 16:9, clock:74MHz progressive<br>           mode 20: 1920x1080 @ 50Hz 16:9, clock:74MHz interlaced<br>           mode 21: 720x576 @ 50Hz 4:3, clock:27MHz x2 interlaced<br>           mode 31: 1920x1080 @ 50Hz 16:9, clock:148MHz progressive<br>           mode 32: 1920x1080 @ 24Hz 16:9, clock:74MHz progressive<br>           mode 33: 1920x1080 @ 25Hz 16:9, clock:74MHz progressive  </p>
+</blockquote>
+<p>一般选择prefer的，即<code>mode 16: 1920x1080 @ 60Hz</code>。</p>
+<h1 id="修改分辨率"><a href="#修改分辨率" class="headerlink" title="修改分辨率"></a>修改分辨率</h1><p><code>sudo vi /boot/config.txt</code><br>修改如下参数  </p>
+<blockquote>
+<p>hdmi_group=1  // 1=电视, 2=显示器<br>hdmi_mode=16  // 1920x1080@60Hz</p>
+</blockquote>
+<p>保存后重启<br><code>sudo reboot</code> </p>
 
       
     </div>
@@ -338,8 +332,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/05/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/11/05/raspberry-pi-1-install-the-system/" rel="next" title="树莓派[1]-系统安装">
+                <i class="fa fa-chevron-left"></i> 树莓派[1]-系统安装
               </a>
             
           </div>
@@ -347,10 +341,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/18/raspberry-pi-2-resolution-setting/" rel="prev" title="树莓派[2]-分辨率设置">
-                树莓派[2]-分辨率设置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -402,8 +392,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -447,6 +446,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查支持模式询"><span class="nav-number">1.</span> <span class="nav-text">查支持模式询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改分辨率"><span class="nav-number">2.</span> <span class="nav-text">修改分辨率</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
