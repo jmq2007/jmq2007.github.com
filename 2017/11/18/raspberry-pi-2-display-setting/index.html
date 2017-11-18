@@ -82,10 +82,10 @@
 <meta name="description" content="HDIM输出有黑边通过HDMI输出到电视，发现分辨率确实是1080P，但是四周都有很大的黑边，通过配置disable_overscan=1可以去除黑边。sudo vi /boot/config.txt找到  #disable_overscan=1  将前面的#注释符号去除，保存。保存后重启sudo reboot. 强制修改分辨率一般HDIM输出已经是自动匹配，默认无需修改，如果要强制修改按下面步骤">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派[2]-显示设置">
-<meta property="og:url" content="https://hiant.me/2017/11/18/raspberry-pi-2-resolution-setting/index.html">
+<meta property="og:url" content="https://hiant.me/2017/11/18/raspberry-pi-2-display-setting/index.html">
 <meta property="og:site_name" content="Hi Ant">
 <meta property="og:description" content="HDIM输出有黑边通过HDMI输出到电视，发现分辨率确实是1080P，但是四周都有很大的黑边，通过配置disable_overscan=1可以去除黑边。sudo vi /boot/config.txt找到  #disable_overscan=1  将前面的#注释符号去除，保存。保存后重启sudo reboot. 强制修改分辨率一般HDIM输出已经是自动匹配，默认无需修改，如果要强制修改按下面步骤">
-<meta property="og:updated_time" content="2017-11-18T06:46:26.211Z">
+<meta property="og:updated_time" content="2017-11-18T06:51:54.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派[2]-显示设置">
 <meta name="twitter:description" content="HDIM输出有黑边通过HDMI输出到电视，发现分辨率确实是1080P，但是四周都有很大的黑边，通过配置disable_overscan=1可以去除黑边。sudo vi /boot/config.txt找到  #disable_overscan=1  将前面的#注释符号去除，保存。保存后重启sudo reboot. 强制修改分辨率一般HDIM输出已经是自动匹配，默认无需修改，如果要强制修改按下面步骤">
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="https://hiant.me/2017/11/18/raspberry-pi-2-resolution-setting/"/>
+  <link rel="canonical" href="https://hiant.me/2017/11/18/raspberry-pi-2-display-setting/"/>
 
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hiant.me/2017/11/18/raspberry-pi-2-resolution-setting/">
+    <link itemprop="mainEntityOfPage" href="https://hiant.me/2017/11/18/raspberry-pi-2-display-setting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -313,6 +313,7 @@
 <p>hdmi_group=1  // 1=电视, 2=显示器<br>hdmi_mode=16  // 1920x1080@60Hz</p>
 </blockquote>
 <p>保存后重启<br><code>sudo reboot</code> </p>
+<p><code>config.txt</code>文件的更多说明见：<br><a href="https://www.raspberrypi.org/documentation/configuration/config-txt/README.md" target="_blank" rel="external">config.txt</a></p>
 
       
     </div>
